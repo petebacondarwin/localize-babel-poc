@@ -1,0 +1,16 @@
+{
+  "name": "babel-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5"
+  },
+  "babel": {
+    "plugins": [
+      "./localize-es5-plugin",
+      "./localize-es2015-plugin"
+    ]
+  }
+}
