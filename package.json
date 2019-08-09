@@ -9,8 +9,11 @@
   },
   "babel": {
     "plugins": [
-      "./localize-es5-plugin",
-      "./localize-es2015-plugin"
+      "./plugins/localize-es5-plugin",
+      "./plugins/localize-es2015-plugin"
     ]
+  },
+  "scripts": {
+    "start": "yarn babel test --out-dir dist"
   }
 }

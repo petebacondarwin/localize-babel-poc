@@ -11,7 +11,11 @@ module.exports = function({ types: t }) {
         if (t.isIdentifier(callee.node) &&
             isLocalizeTag(callee, state) &&
             isGlobal(callee)) {
-          const messageParts = path.node.arguments[0].elements;
+          let messagePartsArg = path.node.arguments[0];
+          if (t.isCallExpression(messagePartsArg)) {
+            messagePartsArg = messagePartsArg.arguments[0];
+          }
+          const messageParts = messagePartsArg.elements;
           const expressions = path.node.arguments.splice(1);
           path.replaceWith(buildLocalizeReplacement(messageParts, expressions));
         }
