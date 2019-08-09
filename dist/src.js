@@ -1,7 +1,7 @@
 function foo(a) {
   var b = 10; // tagged string, with binary expression
 
-  "try" + (40 + 2) + "me"; // nested tags
+  "try\n" + (40 + 2) + "\n  me"; // nested tags
 
   "a" + 1 + "b" + ("x" + 5 + "y" + 6 + "z") + "c"; // es5
 
