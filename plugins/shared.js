@@ -25,5 +25,9 @@ module.exports = function getHelpers(t) {
     }
   }
 
-  return {isLocalizeTag, isGlobal, buildLocalizeReplacement, wrapInParensIfNecessary};
+  function unwrapCallExpression(expression) {
+    return t.isCallExpression(expression) ? expression.arguments[0] : expression;
+  }
+
+  return {isLocalizeTag, isGlobal, buildLocalizeReplacement, wrapInParensIfNecessary, unwrapCallExpression};
 };
