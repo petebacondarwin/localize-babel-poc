@@ -13,5 +13,7 @@ Babel is configured to use them via the `babel` property in `package.json`.
 To test it out run:
 
 ```bash
-yarn babel src.js
+yarn start
 ```
+
+This will build the files in the `src` folder and write them to the `dist` folder.
