@@ -29,5 +29,9 @@ module.exports = function getHelpers(t) {
     return t.isCallExpression(expression) ? expression.arguments[0] : expression;
   }
 
-  return {isLocalizeTag, isGlobal, buildLocalizeReplacement, wrapInParensIfNecessary, unwrapCallExpression};
+  function convertQuasiToLiteral(quasi) {
+    return t.stringLiteral(quasi.value.cooked);
+  }
+
+  return {convertQuasiToLiteral, isLocalizeTag, isGlobal, buildLocalizeReplacement, wrapInParensIfNecessary, unwrapCallExpression};
 };

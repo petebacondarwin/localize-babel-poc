@@ -1,7 +1,7 @@
 const getHelpers = require('./shared');
 
 module.exports = function({ types: t }) {
-  const {isLocalizeTag, isGlobal, buildLocalizeReplacement} = getHelpers(t);
+  const {convertQuasiToLiteral, isLocalizeTag, isGlobal, buildLocalizeReplacement} = getHelpers(t);
   return {
     visitor: {
       TaggedTemplateExpression(path, state) {
@@ -13,9 +13,5 @@ module.exports = function({ types: t }) {
         }
       }
     }
-  }
-
-  function convertQuasiToLiteral(quasi) {
-    return t.stringLiteral(quasi.value.cooked);
   }
 };
